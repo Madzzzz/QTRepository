@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\displayobject.o
+./release\glwidget.o
+./release\mainwindow.o
+./release\plan.o
+./release\shaderprogram.o
+./release\texture.o
+./release\vertex.o
+./release\moc_glwidget.o
+./release\moc_mainwindow.o
+);

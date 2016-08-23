@@ -1,0 +1,13 @@
+INPUT(
+./release\main.o
+./release\displayobject.o
+./release\fil.o
+./release\glwidget.o
+./release\mainwindow.o
+./release\shaderprogram.o
+./release\syntakshighlighter.o
+./release\vertex.o
+./release\moc_glwidget.o
+./release\moc_mainwindow.o
+./release\moc_syntakshighlighter.o
+);
