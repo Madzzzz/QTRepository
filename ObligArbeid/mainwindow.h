@@ -67,7 +67,7 @@ private:
     SyntaksHighlighter *vertexHighlighter;
 
     QGroupBox *verticalGroupBox;
-    QAbstractButton *buttons[NumButtons];   // Endret fra QPushButton for fleksibilitet i GUI
+    QAbstractButton *buttons[NumButtons];
     QDialogButtonBox *buttonBox;
 
     QMenu *fileMenu;

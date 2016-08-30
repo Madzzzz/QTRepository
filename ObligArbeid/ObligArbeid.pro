@@ -18,7 +18,8 @@ SOURCES += main.cpp \
     shaderprogram.cpp \
     syntakshighlighter.cpp \
     vertex.cpp \
-    sosipunkter.cpp
+    sosipunkter.cpp \
+    sosikurver.cpp
 
 HEADERS += \
     displayobject.h \
@@ -30,5 +31,6 @@ HEADERS += \
     syntakshighlighter.h \
     vec3.h \
     vertex.h \
-    sosipunkter.h
+    sosipunkter.h \
+    sosikurver.h
 

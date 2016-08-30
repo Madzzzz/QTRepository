@@ -13,13 +13,9 @@ void Fil::skriv(std::string filnavn, Vertex vertices[], const int n)
     utfil.close();                          // Lukke fil
 }
 
-/* lesfil() åpner og leser en tekstfil med n Vertex-data
- * n leses inn først og det allokeres minne
- */
 void Fil::les(std::string filnavn, Vertex*& vertices, GLuint &n)
 {
     // std::cout << "\nFil::les()" << std::endl;
-
 
     // Åpne eksisterende fil
        std::ifstream inn;

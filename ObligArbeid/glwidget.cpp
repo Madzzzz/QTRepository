@@ -35,6 +35,7 @@ GLWidget::GLWidget(MainWindow *parent) : QOpenGLWidget( parent),
     m_tid = new QTime(QTime::currentTime());
     m_tid->start();
     m_sosipunkter = new SosiPunkter();
+    m_sosikurver = new SosiKurver();
 }
 
 // Dette er protected i QWidget
@@ -70,6 +71,7 @@ GLWidget::~GLWidget()
     delete m_context;
     delete m_tid;
     delete m_sosipunkter;
+    delete m_sosikurver;
 }
 
 /// property i QWidget klassen
@@ -95,11 +97,12 @@ void GLWidget::init()
     qDebug() << "GLWidget init " << m_positionAttribute  << m_colorAttribute;
 
     m_sosipunkter->initVertexBufferObjects();
+    m_sosikurver->initVertexBufferObjects();
 
     glEnableVertexAttribArray(m_positionAttribute);
     glEnableVertexAttribArray(m_colorAttribute);
 
-    glClearColor(0.3f, 0.3f, 0.3f, 1.0f);
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
     glEnable(GL_DEPTH_TEST);
 
@@ -167,8 +170,6 @@ void GLWidget::redigert()
 
 void GLWidget::paintGL()
 {
-    // MouseMove i MainWindow genererer events som får paintGL() til
-    // å utføres. Hindrer dette ved å teste om timeren går.
 
     if (!m_timer->isActive())
     {
@@ -186,10 +187,26 @@ void GLWidget::paintGL()
     m_shaderProgramObjekt->setUniformMatrix(m_uniformPMatrix, 1, GL_FALSE, m_PMatrix.constData());
 
     m_MVMatrix.setToIdentity();
-    m_MVMatrix.scale(0, 0, 0);
+    //m_MVMatrix.scale(0.0001, 0.0001, 0.0001);
+    //m_MVMatrix.translate(-29100444, -674999587, -80);
+
+    m_MVMatrix.translate(-2910, -67505, -60); //usikker på om dette er feil rekkefølge for translatering og skalering men det virker
+    m_MVMatrix.scale(0.0001, 0.0001, 0.0001);
+
+    //m_MVMatrix.translate(-2910, -67500, -80);
+    //m_MVMatrix.scale(0.0001, 0.0001, 0.0001);
 
     m_shaderProgramObjekt->setUniformMatrix(m_uniformMVMatrix, 1, GL_FALSE, m_MVMatrix.constData());
     m_sosipunkter->draw(m_positionAttribute, m_colorAttribute);
+
+    m_MVMatrix.setToIdentity();
+
+    m_MVMatrix.translate(-67517, -2957, -8);
+    m_MVMatrix.scale(0.0001, 0.0001, 0.0001);
+
+    m_shaderProgramObjekt->setUniformMatrix(m_uniformMVMatrix, 1, GL_FALSE, m_MVMatrix.constData());
+
+    m_sosikurver->draw(m_positionAttribute, m_colorAttribute);
 
 
     glEnable(GL_TEXTURE_2D);

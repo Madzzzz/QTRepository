@@ -9,6 +9,7 @@
 #include <QTime>
 #include "vec3.h"
 #include "sosipunkter.h"
+#include "sosikurver.h"
 
 class MainWindow;
 class DisplayObject;
@@ -48,11 +49,8 @@ private:
     void init();
     ShaderProgramObjekt* m_shaderProgramObjekt; // Erstatter QOpenGLShaderProgram* m_program;
 
-    // Variabler til å lagre referanser for shadervariabler
-    // Disse hentes ut fra shaderen
+
     QMatrix4x4 m_MVMatrix;
-    ///Egen matrise til båten/flåten
-    QMatrix4x4 m_boatMatrix;
     QMatrix4x4 m_PMatrix;
 
     GLuint m_positionAttribute;
@@ -71,6 +69,7 @@ private:
     QTime* m_tid;
 
     DisplayObject *m_sosipunkter;
+    DisplayObject *m_sosikurver;
 };
 
 #endif // GLWIDGET_H

@@ -8,6 +8,7 @@ INPUT(
 ./release\syntakshighlighter.o
 ./release\vertex.o
 ./release\sosipunkter.o
+./release\sosikurver.o
 ./release\moc_glwidget.o
 ./release\moc_mainwindow.o
 ./release\moc_syntakshighlighter.o

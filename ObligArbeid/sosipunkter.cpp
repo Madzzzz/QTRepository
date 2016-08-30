@@ -10,7 +10,7 @@ using namespace std;
 
 SosiPunkter::SosiPunkter() : DisplayObject()
 {
-    lesfil("C:/Users/mads/Desktop/Visim/Kartdata_403_Hamar_UTM33_N50_SOSI/SosiTestPunkter");
+    lesfil("C:/Users/mads/Desktop/Visim/Kartdata_403_Hamar_UTM33_N50_SOSI/SosiTestPunkter.txt");
 
 }
 
@@ -57,5 +57,6 @@ void SosiPunkter::draw(GLint positionAttribute, GLint normalAttribute, GLint tex
         //glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, m_texture);
     }
-    glDrawArrays(GL_POINTS, 0, m_antallVertices);
+
+    glDrawArrays(GL_LINE_LOOP, 0, m_antallVertices);
 }

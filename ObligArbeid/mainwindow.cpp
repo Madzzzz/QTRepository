@@ -11,8 +11,6 @@ MainWindow::MainWindow() : QMainWindow()
     vertexShaderFilnavn = new QString("C:/Users/mads/Desktop/3D-Apps/vertexshader.glsl");
 
     fragmentShaderEditor = new QPlainTextEdit();
-    // Dette gir en uønsket ekstra, liten scrollbar øverst til venstre:
-    // QScrollBar* fragmentVScrollBar = new QScrollBar(Qt::Vertical, fragmentShaderEditor);
     QScrollBar* fragmentVScrollBar = new QScrollBar(Qt::Vertical);
     fragmentShaderEditor->addScrollBarWidget(fragmentVScrollBar, Qt::AlignRight);
 
@@ -49,7 +47,7 @@ MainWindow::MainWindow() : QMainWindow()
     mainWidget->setLayout(mainLayout);
     setCentralWidget(mainWidget);
 
-    setWindowTitle(tr("Eksamen 10.05.16 - 3D-Apps 23DAPP101 - Kandidatnr. 83"));
+    setWindowTitle(tr("Mads Hellenes Oblig1"));
     statusBar()->showMessage("Klikk <Start> for å begynne");
 
     kobleSignalsAndSlots();
